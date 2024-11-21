@@ -105,5 +105,33 @@ def logout():
 def dashboard():
     return render_template('dashboard.html', username=current_user.username)
 
+
+#Pruebas de salida de ingredientes a produccion 
+@app.route('/pagina-principal-salida')
+def pagina_principal_salida():
+    return render_template('salida-ingredientes1.html')
+
+@app.route('/filtro')
+def filtro():
+    return render_template('salida-ingredientes2.html')
+
+@app.route('/checkbox')
+def checkbox():
+    return render_template('salida-ingredientes3.html')
+
+@app.route('/datos-operacion')
+def datos_operacion():
+    return render_template('salida-ingredientes4.html')
+
+@app.route('/detalles-salida')
+def detalles_salida():
+    return render_template('salida-ingredientes5.html')
+
+@app.route('/salida')
+def salida():
+    return render_template('salida-ingredientes6.html')
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
