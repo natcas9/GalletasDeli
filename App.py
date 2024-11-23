@@ -46,7 +46,7 @@ def load_user(user_id):
 def index():
     if current_user.is_authenticated:
         return render_template('index.html', username=current_user.username)
-    return redirect(url_for('login'))
+    return redirect(url_for('/LoginRegisterService/login.html'))
 
 # Página de inicio de sesión
 @app.route('/login', methods=['GET', 'POST'])
@@ -68,7 +68,7 @@ def login():
         else:
             flash("Correo o contraseña incorrectos", "error")
     
-    return render_template('login.html')
+    return render_template('/LoginRegisterService/login.html')
 
 # Página de registro de usuario
 @app.route('/register', methods=['GET', 'POST'])
@@ -89,7 +89,7 @@ def register():
             flash("Usuario registrado exitosamente. Por favor, inicia sesión.", "success")
             return redirect(url_for('login'))
     
-    return render_template('register.html')
+    return render_template('/LoginRegisterService/register.html')
 
 # Cerrar sesión
 @app.route('/logout')
